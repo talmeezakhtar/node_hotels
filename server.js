@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
 const db = require('./db');
-
-const PORT = 3000;
+require('dotenv').config();
 
 // Middleware
 app.use(express.json());
@@ -19,6 +18,6 @@ app.use('/person',personRoutes);
 app.use('/menu',menuRouter);
 
 // Start Server
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+app.listen(process.env.PORT, () => {
+    console.log(`Server running on http://localhost:${process.env.PORT}`);
 });

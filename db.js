@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-
+require('dotenv').config();
 // Define the connection URL
-const mongoURL = "mongodb+srv://talmeezakhtar14_db_user:Talmeez%4018@cluster0.t9kqrox.mongodb.net/hotels";
+const mongoURL = process.env.MONGODB_URL;
 
 // Connect to MongoDB
 async function connectDB() {
